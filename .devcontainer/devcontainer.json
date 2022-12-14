@@ -1,0 +1,29 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+	"name": "RealWorld Next.js & trpc",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			// Use the VARIANT arg to pick a Debian OS version: buster, bullseye
+			// Use bullseye when on local on arm64/Apple Silicon.
+			"VARIANT": "18-bullseye",
+			"PSCALE_VERSION": "0.125.0"
+		}
+	},
+	"extensions": [
+		"cweijan.vscode-mysql-client2",
+		"Prisma.prisma",
+		"esbenp.prettier-vscode"
+	],
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "pnpm install"
+	// Configure tool-specific properties.
+	// "customizations": {},
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
